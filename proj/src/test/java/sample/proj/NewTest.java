@@ -14,10 +14,8 @@ import io.restassured.response.Response;
 
 public class NewTest {
 	
-	static int a;
-	static String f,b,c;
-	
     @Test(enabled = false)
+	//RestAssured response
     public void rest() {
         Response response = RestAssured
             .given()
@@ -94,3 +92,4 @@ public class NewTest {
 	        System.out.println("After Swapping" + x + y);
 	}
 }
+
