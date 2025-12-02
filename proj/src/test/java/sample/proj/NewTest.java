@@ -15,6 +15,7 @@ import io.restassured.response.Response;
 public class NewTest {
 	
 	static int a;
+	static String f,b,c;
 	
     @Test(enabled = false)
     public void rest() {
