@@ -14,6 +14,8 @@ import io.restassured.response.Response;
 
 public class NewTest {
 	
+	static int a;
+	
     @Test(enabled = false)
     public void rest() {
         Response response = RestAssured
