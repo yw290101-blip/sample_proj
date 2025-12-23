@@ -28,6 +28,13 @@ public class LoginPage {
          } else{
              System.out.println("Given number is odd");
          }
+         
+         int b = 11;
+         if(a%2!=0){
+             System.out.println("Given number is odd");
+         } else{
+             System.out.println("Given number is even");
+         }
      }
     
     //Print all odd number
