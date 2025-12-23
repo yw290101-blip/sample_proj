@@ -1,5 +1,6 @@
 package sample.proj;
 
+import org.testng.annotations.Test;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -9,23 +10,47 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
+import io.cucumber.java.en.Given;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
+
+@CucumberOptions{
+	features = "src/test/java/resources/feature",
+			glue="stepdefinitions",
+			plugin= {"pretty","html:target/cucumber-reports.html"},
+			monochrome=true
+}
 public class NewTest {
 	
     @Test(enabled = false)
 	//RestAssured response
     public void rest() {
+    	RestAssured.baseURI="https://jsonplaceholder.typicode.com";
+    	
         Response response = RestAssured
-            .given()
-                .baseUri("https://jsonplaceholder.typicode.com")
+        		.given()
+        		.header(null)
             .when()
                 .get("/posts/1")
             .then()
                 .statusCode(200)
                 .extract().response();
         System.out.println("Response: " + response.asString());
+        
+        RestAssured.baseURI = "https://example.com/api";
+
+        Response responseLog = RestAssured
+            .given()
+                .header("Content-Type", "application/json")
+                .body("{ \"username\": \"testuser\", \"password\": \"testpass\" }")
+            .when()
+                .post("/login")
+            .then()
+                .statusCode(200)
+                .body("success")
+                .extract().response();
+
 	}
 	@Test(enabled = false)
 	public void AddTest() {

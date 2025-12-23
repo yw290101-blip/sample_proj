@@ -1,18 +1,12 @@
 package sample.proj;
 
+import org.testng.annotations.Test;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Scanner;
 
-import org.testng.annotations.Test;
-
-/**
- * Unit test for simple App.
- */
 public class AppTest {
 
-	@Test(enabled = false)
+	@Test(enabled = true,groups = {"regression"})
     public void shouldAnswerWithTrue() {
        
 		Integer num = null ; // Change this number to test
@@ -25,7 +19,7 @@ public class AppTest {
           }
       }
 	
-	@Test(enabled = false)
+	@Test
 	public void FindingArrayValues() {
 		int lar[] = {1,3,5,10};
 		int max = lar[0];
@@ -58,11 +52,11 @@ public class AppTest {
 		System.out.println(smaller);
 	}
     
-	@Test
+	@Test(groups = {"regression"})
 	public void countingWordsfromSen() {
 		String str = "I am yogeshwaran and my city is coimbatores";
 		String[] word =str.split("\s");
-		//System.out.println(word.length()); //output is 8
+		//System.out.println(word.length()); //output is 8 words
 		String largestWord ="";
 		
 		for(String words : word) {
@@ -72,6 +66,7 @@ public class AppTest {
 		}
 		System.out.println("Largest word in sentence : "+largestWord);
 
+		String str = "I am yogeshwaran and my city is coimbatores";
 	        // Split the string into words
 	        String[] words = str.split(" ");
 
@@ -80,7 +75,7 @@ public class AppTest {
 
 	        for (String sinword : words) {
 	            if (sinword.length() > maxLength) {
-	                // Found a new longest word
+	                // Found a new largest word
 	                maxLength = sinword.length();
 	                largestWords.clear();
 	                largestWords.add(sinword);
@@ -91,7 +86,7 @@ public class AppTest {
 	        }
 
 	        System.out.println("The largest word(s): " + largestWords);
-
+	       //System.out
 	}
 	
 }
