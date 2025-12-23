@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="sample.proj.AppTest"/>
+      <class name="sample.proj.groceryItems"/>
       <class name="sample.proj.WebAppTest"/>
       <class name="sample.proj.NewTest"/>
     </classes>

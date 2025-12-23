@@ -66,7 +66,7 @@ public class AppTest {
 		}
 		System.out.println("Largest word in sentence : "+largestWord);
 
-		String str = "I am yogeshwaran and my city is coimbatores";
+		//String str = "I am yogeshwaran and my city is coimbatores";
 	        // Split the string into words
 	        String[] words = str.split(" ");
 

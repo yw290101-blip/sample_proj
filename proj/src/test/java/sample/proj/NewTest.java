@@ -15,12 +15,6 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 
-@CucumberOptions{
-	features = "src/test/java/resources/feature",
-			glue="stepdefinitions",
-			plugin= {"pretty","html:target/cucumber-reports.html"},
-			monochrome=true
-}
 public class NewTest {
 	
     @Test(enabled = false)
@@ -48,7 +42,6 @@ public class NewTest {
                 .post("/login")
             .then()
                 .statusCode(200)
-                .body("success")
                 .extract().response();
 
 	}

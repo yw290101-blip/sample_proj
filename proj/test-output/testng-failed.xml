@@ -5,7 +5,7 @@
     <classes>
       <class name="sample.proj.AppTest">
         <methods>
-          <include name="countingWordsfromSen"/>
+          <include name="shouldAnswerWithTrue"/>
         </methods>
       </class> <!-- sample.proj.AppTest -->
     </classes>
